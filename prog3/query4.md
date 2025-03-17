@@ -96,5 +96,3 @@ ORDER BY M.Mov_Title;
 - **Why `MAX(Rev_Stars)`?** → Finds the highest rating for each movie.  
 - **Why `GROUP BY`?** → Groups results by movie title so we get one row per movie.  
 - **Why `ORDER BY`?** → Sorts results alphabetically by movie title.  
-
-Let me know if you need more clarification!
