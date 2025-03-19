@@ -10,7 +10,7 @@ WHERE Mov_id IN (
     )
 );
 
---- note
+-- note
 UPDATE table_name
 SET column1 = value1, column2 = value2, ...
 WHERE condition;
