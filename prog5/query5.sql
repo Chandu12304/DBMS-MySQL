@@ -1,0 +1,10 @@
+SELECT DNo, COUNT(*) AS High_Salary_Employees
+FROM EMPLOYEE
+WHERE Salary > 600000
+GROUP BY DNo
+HAVING DNo IN (
+    SELECT DNo 
+    FROM EMPLOYEE 
+    GROUP BY DNo 
+    HAVING COUNT(*) > 5
+);
