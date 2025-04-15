@@ -1,6 +1,5 @@
-select salesman_id, Name
-from salesman
-where salesman_id in (select salesman_id
-                      from customer
-                      group by salesman_id
-                      having count(customer_id)>1);
+SELECT DISTINCT S.salesman_id, S.Name
+FROM salesman S
+JOIN customer C ON S.salesman_id = C.salesman_id
+GROUP BY S.salesman_id, S.Name
+HAVING COUNT(C.customer_id) > 1;
