@@ -1,3 +1,5 @@
-SELECT Name, Salary AS Current_Salary, Salary * 1.10 AS New_Salary
-FROM EMPLOYEE
-WHERE SSN IN (SELECT SSN FROM WORKS_ON WHERE PNo IN (SELECT PNo FROM PROJECT WHERE PName = 'IoT'));
+SELECT E.Name, E.Salary AS Current_Salary, E.Salary * 1.10 AS New_Salary
+FROM EMPLOYEE E
+JOIN WORKS_ON W ON E.SSN = W.SSN
+JOIN PROJECT P ON W.PNo = P.PNo
+WHERE P.PName = 'IoT';
