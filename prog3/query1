@@ -1,7 +1,4 @@
-SELECT Mov_Title 
-FROM MOVIES 
-WHERE Dir_id IN (
-    SELECT Dir_id 
-    FROM DIRECTOR 
-    WHERE Dir_Name = 'Christopher Nolan'
-);
+SELECT M.Mov_Title
+FROM MOVIES M
+JOIN DIRECTOR D ON M.Dir_id = D.Dir_id
+WHERE D.Dir_Name = 'Christopher Nolan';
